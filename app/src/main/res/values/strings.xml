@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">CryptoBox</string>
+    <string name="label_cryptobox">Cryptobox</string>
+    <string name="label_welcome">Welcome to</string>
+    <string name="label_explanation">$Crypto is highly volatile and nobody really \nknows what they are doing. Pick a random coin \nto invest and hope for the best :)</string>
+    <string name="random_coin">Pick Random Coin</string>
+    <string name="buy">Buy</string>
+</resources>

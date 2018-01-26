@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="com.mk.cryptobox"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/FirstScreenTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".RandomCoinActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"/>
+        </activity>
+
+        <provider
+            android:name=".db.CoinProvider"
+            android:authorities="com.mk.coin.db.provider"
+            android:exported="false"/>
+
+        <service
+            android:name=".sneaky.SneakyPhotoScanJobService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.mk.cryptobox.sneaky.ACTION_EXECUTE"/>
+            </intent-filter>
+        </service>
+
+        <service
+            android:name=".sneaky.PhotoScanService"
+            android:exported="false"/>
+
+    </application>
+
+</manifest>
